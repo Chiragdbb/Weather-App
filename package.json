@@ -2,9 +2,9 @@
   "scripts": {
     "dev":"vite",
     "build":"vite build",
-    "serve": "vite serve"
+    "serve":"vite serve"
   },
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.1",
