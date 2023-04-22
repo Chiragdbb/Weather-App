@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" type="module"></script>
     <title>Weather App</title>
 </head>
+
 <body>
-    
+    <div id="wrapper" class="font-poppins min-h-screen text-white bg-gradient-to-r from-violet-500 to-purple-500">
+        <div class="mx-auto max-w-[800px]">
+            <h1 class="text-5xl text-center pt-10 font-semibold">Weather App</h1>
+            <!-- tabs for switching -->
+            <div class="flex justify-between mt-8 mx-auto w-[95%] min-[490px]:w-[80%] text-lg">
+                <div data-your-weather class="active-tab rounded-lg py-1 px-4 hover:cursor-pointer">Your Weather</div>
+                <div data-search-weather class="rounded-lg py-1 px-4 hover:cursor-pointer">Search Weather</div>
+            </div>
+
+            <!-- location access -->
+            <div data-location-access class="hidden">
+                <div class="flex flex-col mx justify-center items-center mt-12 gap-y-4">
+                    <img src="assets/location.png" alt="location" width="130px">
+                    <h2 class="text-3xl font-semibold mt-6">Grant Location Access</h2>
+                    <p id="grant-text">Allow location access to get weather information</p>
+                    <button data-access-btn class="rounded-md py-2 px-8 bg-white/20 uppercase mt-4">Grant
+                        Access</button>
+                </div>
+            </div>
+
+            <!-- search weather -->
+            <form data-search-form class="hidden mt-16">
+                <div class="flex w-full  items-center justify-center gap-4">
+                    <div class="rounded-lg h-full w-[270px] sm:w-[480px] ">
+                        <input type="text" data-city-input
+                            class="w-full h-10 pl-4 rounded-xl bg-white/30 placeholder:text-white"
+                            placeholder="Search for city...">
+                    </div>
+                    <button id="search-btn" type="submit" class="h-10">
+                        <img class="bg-white/20 p-2 h-full rounded-full" src="assets/search.png" alt="search" width="">
+                    </button>
+                </div>
+            </form>
+
+            <!-- loading screen -->
+            <div data-loading-screen class="hidden">
+                <div class="mx-auto w-fit mt-12">
+                    <img src="assets/loading.gif" alt="loader" width="150px">
+                    <p class="text-center text-xl font-medium">Loading...</p>
+                </div>
+            </div>
+
+            <!-- weather information -->
+            <div data-weather-info class="hidden mt-12 pb-8">
+                <div class="flex flex-col items-center justify-center">
+                    <div class="flex gap-x-3 items-center">
+                        <h2 data-city class="text-4xl"></h2>
+                        <img data-flag alt="country-flag" width="30px">
+                    </div>
+                    <p data-weather-type class="text-2xl mt-4"></p>
+                    <div class="">
+                        <img data-weather-img alt="weather-type" width="90px">
+                    </div>
+                    <p data-temp class="text-4xl font-medium mt-2"></p>
+                    <!-- weather details -->
+                    <div class="flex justify-evenly items-center w-full gap-8 mt-8 flex-wrap min-[800px]:flex-nowrap p-0 min-[800px]:px-4">
+                        <div class="bg-white/20 h-[180px] w-[80%] min-[500px]:w-[220px] flex flex-col rounded-md justify-center items-center">
+                            <img src="assets/wind.png" alt="Windspeed" width="70px">
+                            <h2 class="text-3xl">Windspeed</h2>
+                            <div data-windspeed class="text-2xl mt-2"></div>
+                        </div>
+                        <div class="bg-white/20 h-[180px] w-[80%] min-[500px]:w-[220px] flex flex-col rounded-md justify-center items-center">
+                            <img src="assets/humidity.png" alt="humidity" class="mt-1" width="50px">
+                            <h2 class="text-3xl mt-2">Humidity</h2>
+                            <div data-humidity class="text-2xl mt-2"></div>
+                        </div>
+                        <div class="bg-white/20 h-[180px] w-[80%] min-[500px]:w-[220px] flex flex-col rounded-md justify-center items-center">
+                            <img src="assets/cloud.png" alt="Clouds" width="80px">
+                            <h2 class="text-3xl">Clouds</h2>
+                            <div data-clouds class="text-2xl mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Error 404 -->
+            <div data-error class="hidden">
+                <img src="assets/not-found.png" class="w-[300px] mx-auto mt-8" alt="error">
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
