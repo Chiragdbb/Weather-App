@@ -3,7 +3,7 @@ module.exports = {
 	content: ["*"],
 	theme: {
 		extend: {
-			fontFamily: { 'poppins': ["poppins", "sans-serif"] },
+			fontFamily: { 'Montserrat': ["Montserrat", "sans-serif"] },
 		},
 	},
 	plugins: [],
