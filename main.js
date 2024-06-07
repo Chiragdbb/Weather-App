@@ -18,7 +18,7 @@ const humidity = document.querySelector("[data-humidity]");
 const clouds = document.querySelector("[data-clouds]");
 let userInput = document.querySelector("[data-city-input]");
 
-const API_KEY = "68230895574dfba55abaea2c0a0e9625";
+const API_KEY = import.meta.env.VITE_API_KEY
 let currentTab = yourWeatherTab;
 geoLocationAccess();
 
